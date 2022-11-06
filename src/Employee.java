@@ -3,14 +3,15 @@ public class Employee {
     private int department;
     private double salary;
     private int id;
+    private static int counter = 0;
 
-    public Employee(String fullName, int department, double salary, int id) {
+    public Employee(String fullName, int department, double salary) {
         this.fullName = fullName;
         if (department < 1 || department > 5) throw new IllegalArgumentException("Отдел может быть от 1 до 5");
         else this.department = department;
         if (salary < 0) throw new IllegalArgumentException("Зарплата не может быть отрицательной");
         else this.salary = salary;
-        this.id = id;
+        this.id = counter++;
     }
 
     public String getFullName() {

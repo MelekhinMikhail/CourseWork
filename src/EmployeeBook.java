@@ -7,11 +7,11 @@ public class EmployeeBook {
     }
 
     //Метод ниже добавляет в массив нового сотрудника, если массив переполнен, то пишет об этом в консоль
-    public void addNewEmployee(String fullName, int department, double salary, int id) {
+    public void addNewEmployee(String fullName, int department, double salary) {
         boolean isFull = true;
         for (int i=0; i<array.length; i++) {
             if (array[i] == null) {
-                array[i] = new Employee(fullName, department, salary, id);
+                array[i] = new Employee(fullName, department, salary);
                 isFull = false;
                 break;
             }
